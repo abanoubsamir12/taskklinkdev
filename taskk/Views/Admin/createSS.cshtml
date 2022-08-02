@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Create ss";
+}
+<h1>create SoundSystem</h1>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model SoundSystem
+<form method="post">
+
+    <div class="border p-3 mt-4">
+        <div class="pb-2">
+            <h2 class="text-primary" >Create SoundSystem</h2>
+            <hr />
+            
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="price"></label>
+            <input asp-for="price" class="form-control" />
+            <span asp-validation-for="price" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="discount"></label>
+            <input asp-for="discount" class="form-control" />
+            <span asp-validation-for="discount" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="imgSrc"></label>
+            <input asp-for="imgSrc" class="form-control" />
+            <span asp-validation-for="imgSrc" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">create</button>
+        <button asp-controller="Admin" asp-action="IndexSS" class="btn btn-secondary">back </button>
+            
+    </div>
+</form>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

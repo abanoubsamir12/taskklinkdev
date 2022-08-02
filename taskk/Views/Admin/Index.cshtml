@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "choose Type Admin";
+}
+
+@model type
+
+<div class="row">  
+    <div class="col-md-9">  
+        <form  asp-action="Index" asp-controller="Admin" method="post" > 
+            
+            <!-- <div asp-validation-summary="ModelOnly" class="text-danger"></div> --> 
+            <div class="row">  
+            <div class="col-md-4">  
+                <br />
+                <select id="drpEmpList" class="form-control" asp-for="Id" asp-items="@(new SelectList(type.typelist, "Value", "Text")) ">  
+                    <option value="" disabled>--Select--</option>  
+                </select>  
+                <input type="hidden" asp-for="Id" />  
+                 
+            </div>  
+            <div class="col-md-2">  
+                <br />
+                <input type="submit" name="btnSubmit" value="Submit" class="btn btn-success" />  
+            </div>  
+        </div>
+  
+        </form>  
+            </div>  
+        </div>  
+  
+  
+        @section Scripts {  
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}  
+        }
